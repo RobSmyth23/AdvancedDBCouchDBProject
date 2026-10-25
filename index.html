@@ -1,0 +1,53 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Library</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="pouchdb.min.js"></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <main class="container">
+        <h1>Movie Library</h1>
+
+        <div>
+            <button type="button" id="offline-btn">
+                Go Offline
+            </button>
+            <p id="sync-status">Connecting to CouchDB...</p>
+        </div>
+
+        <p id="status">Starting application!!!</p>
+
+        <form id="movie-form">
+            <input type="hidden" id="edit-id">
+
+            <label for="title">Movie Name</label>
+            <input id="title" type="text" required>
+
+            <label for="year">Release year</label>
+            <input id="year"
+                   type="number"
+                   min="1888"
+                   max="2100"
+                   step="1"
+                   required>
+
+            <label for="actors">Actors</label>
+            <input id="actors" type="text" required>
+
+            <label for="genres">Genres</label>
+            <input id="genres" type="text" required>
+
+            <button id="submit-button" type="submit">Add Movie</button>
+            <button id="cancel-button" type="button" hidden>Cancel Edit</button>
+        </form>
+
+        <h2>Saved Movies</h2>
+        <ul id="movie-list"></ul>
+    </main>
+</body>
+</html>
